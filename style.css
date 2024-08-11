@@ -1,0 +1,162 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
+/* Define CSS variables */
+:root {
+    --primary-color: #7541c8;
+    --secondary-color: #48556a;
+    --background-color: #ecf2f8;
+    --text-color: #000000;
+    --font-size: 13px;
+}
+
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+/* Testimonial grid styles */
+.main {
+    display: grid;
+    grid-template-areas:
+        'a a b c'
+        'd e e c';
+    width: min(95%, 70rem);
+    gap: 1.5rem;
+    grid-auto-columns: 1fr;
+    padding-block: 2rem;
+    margin-inline: auto;
+}
+
+.testimonial {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem #48556a40;
+}
+
+/* Individual testimonial styles */
+.t1 {
+    grid-area: a;
+    background-image: url(https://kabir-sagiii.github.io/CSS_Grid_learn-grid-the-easy-way/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 10%;
+    background-color: var(--primary-color);
+}
+
+.t2 {
+    grid-area: b;
+    background-color: var(--secondary-color);
+}
+
+.t3 {
+    grid-area: c;
+    background-color: #ffffff;
+}
+
+.t4 {
+    grid-area: d;
+    background-color: #ffffff;
+}
+
+.t5 {
+    grid-area: e;
+    background-color: #19212e;
+}
+
+/* Typography styles */
+.light {
+    color: #ffffff;
+}
+
+.dark {
+    color: var(--text-color);
+}
+
+.desc-heading {
+    font-size: 20px;
+    margin-top: 18px;
+}
+
+.desc {
+    opacity: 0.7;
+    font-size: var(--font-size);
+    line-height: 1.5;
+    margin-top: 1em;
+}
+
+.name {
+    display: flex;
+    gap: 1rem;
+}
+
+.name img {
+    border-radius: 50%;
+    width: 28px;
+}
+
+.name h2 {
+    font-size: var(--font-size);
+}
+
+.name p {
+    font-size: 11px;
+    opacity: 0.5;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .main {
+        grid-template-areas:
+            'a a'
+            'b c'
+            'd e';
+        gap: 1rem;
+    }
+
+    .testimonial {
+        padding: 1.5rem;
+    }
+
+    .desc-heading {
+        font-size: 18px;
+    }
+
+    .desc {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        grid-template-areas:
+            'a'
+            'b'
+            'c'
+            'd'
+            'e';
+        gap: 0.5rem;
+    }
+
+    .testimonial {
+        padding: 1rem;
+    }
+
+    .desc-heading {
+        font-size: 16px;
+    }
+
+    .desc {
+        font-size: 10px;
+    }
+}
